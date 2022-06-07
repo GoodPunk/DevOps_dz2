@@ -1,0 +1,14 @@
+version: '3'
+services:
+  build: building
+  volumes: ./tmp/
+
+
+  
+
+  web:
+    image: tomcat:latest
+    ports:
+      - "8080:8080"
+    volumes_from:
+      - build
