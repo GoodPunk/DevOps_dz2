@@ -1,6 +1,6 @@
 version: '3'
 services:
-  build: building
+  image: building
   volumes: ./tmp/
 
 
