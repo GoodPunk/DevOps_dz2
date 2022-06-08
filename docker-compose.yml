@@ -2,7 +2,7 @@ version: '3.8'
 services:
   building:
     build:
-      context: ./bulding
+      context: /bulding
       dockerfile: Dockerfile
     volumes: 
       - type: volume
@@ -12,7 +12,7 @@ services:
 
   web:
     build:
-      context: ./prod
+      context: /prod
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
