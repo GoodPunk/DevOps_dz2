@@ -1,14 +1,23 @@
 version: '3'
 services:
-  image: building
-  volumes: ./tmp/
-
-
-  
+  building:
+  build:
+    context: ./bulding
+    dockerfile: Dockerfile
+  volumes: 
+    - type: volume
+      source: data
+      target: /data
+  command: cp /home/boxfuse-sample-java-war-hello/target/hello-1.0.war /data
 
   web:
-    image: tomcat:latest
+    build:
+      context: ./prod
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    volumes_from:
-      - build
+    volumes:
+      - data:/usr/local/tomcat/webapps/
+
+volumes:
+  data:
