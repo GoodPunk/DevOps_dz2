@@ -1,14 +1,14 @@
 version: '3.8'
 services:
   building:
-  build:
-    context: ./bulding
-    dockerfile: Dockerfile
-  volumes: 
-    - type: volume
-      source: data
-      target: /data
-  command: cp /home/boxfuse-sample-java-war-hello/target/hello-1.0.war /data
+    build:
+      context: ./bulding
+      dockerfile: Dockerfile
+    volumes: 
+      - type: volume
+        source: data
+        target: /data
+    command: cp /home/boxfuse-sample-java-war-hello/target/hello-1.0.war /data
 
   web:
     build:
